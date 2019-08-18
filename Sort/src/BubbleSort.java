@@ -4,27 +4,24 @@
 public class BubbleSort {
 	/**
 	 * 冒泡排序
+	 * 时间复杂度 n^2
+	 * 空间复杂度 1
 	 * @param arr
 	 * @return
 	 */
-	public static int[] bubbleSort(int[] arr){
+	public static void bubbleSort(int[] arr){
 		if(arr.length<=1){
-			return arr;
+			return ;
 		}else{
 			for(int i=0;i<arr.length-1;i++){
 				for(int j=0;j<arr.length-i-1;j++){
-					if(arr[j]>arr[j+1]){
-						swap(arr,j,j+1);
+					if(arr[j]>arr[j+1]){//冒泡过程
+						Tools.swap(arr,j,j+1);
 					}
 				}
 			}
-			return arr;
+			return ;
 		}
 	}
 
-	public static void swap(int[] arr,int indexA,int indexB){
-		int tmp = arr[indexA];
-		arr[indexA]= arr[indexB];
-		arr[indexB]=tmp;
-	}
 }
