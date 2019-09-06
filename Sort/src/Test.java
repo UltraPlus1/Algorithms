@@ -11,17 +11,21 @@ public class Test {
 			}
 			int arr[]= new int[size];
 			for(int i=0;i<size;i++){
-				arr[i] = r.nextInt(1000);
+				arr[i] = r.nextInt(100000);
 				System.out.print(arr[i]+" ");
 			}
 			System.out.println();
 			int[] arr2 = arr.clone();
+			int[] arr3 = arr.clone();
 			long begin1 = System.nanoTime();
 			BubbleSort.bubbleSort(arr);
 			long end1 = System.nanoTime();
 			long begin2 = System.nanoTime();
 			SelectionSort.selectionSort(arr2);
 			long end2 = System.nanoTime();
+			long begin3 = System.nanoTime();
+			QuickSort.quickSort(arr3,0,arr3.length-1);
+			long end3 = System.nanoTime();
 			for(int item:arr){
 				System.out.print(item+" ");
 			}
@@ -30,8 +34,13 @@ public class Test {
 				System.out.print(item+" ");
 			}
 			System.out.println();
+			for(int item:arr3){
+				System.out.print(item+" ");
+			}
+			System.out.println();
 			System.out.println("冒泡排序时间："+(end1-begin1)+"纳秒");
 			System.out.println("选择排序时间："+(end2-begin2)+"纳秒");
+			System.out.println("快速排序时间："+(end3-begin3)+"纳秒");
 		}
 	}
 }
