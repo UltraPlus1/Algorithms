@@ -41,8 +41,8 @@ public class QuickSort {
 			//交换
 			Tools.swap(array,left,right);//自己写的交换函数
 		}
-		//交换 index 和 key 已经说明清楚了 key 比 index 大 见上面解释
-		Tools.swap(array,left,key);
+		if(array[left]<=array[key])//选左边第一个数为基准，如果key比left大才交换
+			Tools.swap(array,left,key);
 		return left;
 	}
 }
